@@ -15,7 +15,6 @@ export class EmployeeService {
 private _url:string = '/assets/data/employees.json';
   constructor(private http: HttpClient) { }
 
-  
 public val:any;
 
   getEmployees(): Observable<IEmployee[]> {

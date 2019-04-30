@@ -1,9 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    <!-- Welcome to {{ title }}! -->
-    {{message}}  {{m}}
+    Welcome to routing
+   
   </h1>
+  <nav>
+    <a routerLink="/departments" routerLinkActive="active">Departments</a>
+    <a routerLink="/employees" routerLinkActive="active">Employees</a>
+  </nav>
 </div>
 
 <!-- <app-test (childEvent)="message=$event" [parentData]="name"></app-test> -->
@@ -11,5 +15,5 @@
 
 <!-- <app-test1></app-test1> -->
 
-<app-employee-list></app-employee-list>
+<!-- <app-employee-list></app-employee-list> -->
 <router-outlet></router-outlet>
