@@ -9,8 +9,44 @@ body {
     background:lightgray;
 }
 
-/*Media Queries for fixing distortion at some points*/
+// scroll css for inside slider
+.mat-drawer-inner-container::-webkit-scrollbar{
+    width:5px;
+    color: #1fc8db;
+    background: darkgrey;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+    border-radius: 5px; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
 
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    background-color: #125979;
+    border-radius: 5px;
+    outline: 1px solid slategrey;
+  }
+
+// scroll css for whole body
+body::-webkit-scrollbar {
+    width: 10px;
+   
+    background-color: #020101;
+
+}
+ 
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #fd0459;
+  outline: 1px solid slategrey;
+}
+
+
+/*Media Queries for fixing distortion at some points*/
 @media screen and (max-width: 1150px){
     body{
        padding: 2em 11.5em !important;
@@ -24,22 +60,110 @@ body {
     body{
        padding: 0em 0em !important;
    }
+   .mat-drawer-content {
+    margin-top: 54px;
+}
+   
+}
+
+@media only screen and(max-width: 1800px){
+    body{
+        padding: 0em 0em !important;
+    }
+    .mat-drawer-content {
+        margin-top: 68px;
+   }
+    .example-card{
+        width: 100%;
+        margin: 3px auto;
+    }
+    .example-full-width{
+        width: 90%;
+      }
+     
+    
+    
 }
 
 @media screen and (max-width: 960px){
    body{
        padding: 0em 0em !important;
    }
+   .example-full-width{
+    width: 80%;
+  }
 }
 
 @media screen and (max-width:768px){
   body{
        padding: 0em 0em !important;
    }
+   .example-full-width{
+    width: 90%;
+  }
+  .example-card{
+    width: auto;
+    margin: 1px auto;
+}
+
+  .mat-drawer-content {
+    margin-top: 54px;
+}
+  .liketext{
+    display: none;
+}
+.commenttext{
+    display: none;
+}
+.sharetext{
+    display: none;
+}
+.viewtext{
+    display: none;
+}
 }
 
 /*Media Queries For Mobiles*/
 @media screen and (max-width:480px){
+    body{
+        padding: 0em 0em !important;
+    }
+    .example-card{
+        width: auto;
+        margin: 1px auto;
+    }
+    .mat-drawer-content {
+        margin-top: 53px;
+   }
+   
+    mat-card-actions.action-buttons.mat-card-actions {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .example-full-width{
+        width: 100%;
+    }
+    .mat-card-actions .mat-button {
+        margin: 0 0px !important;
+        padding: 0 8px;
+        line-height: 5;
+    }
+    .mat-button, .mat-flat-button{
+        min-width: 20px !important;
+        padding: 0 3px;
+    }
+    .liketext{
+        display: none;
+    }
+    .commenttext{
+        display: none;
+    }
+    .sharetext{
+        display: none;
+    }
+    .viewtext{
+        display: none;
+    }
 
 }
   

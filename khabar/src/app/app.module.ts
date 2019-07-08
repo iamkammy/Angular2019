@@ -14,6 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {FormsModule} from '@angular/forms';
 
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent
@@ -32,6 +33,8 @@ import {FormsModule} from '@angular/forms';
     MatListModule,
     MatSnackBarModule,
     FormsModule,
+    MatInputModule,
+   
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [NewsApiService],

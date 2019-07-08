@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <h1>Bootcamp Enrollment Form</h1>
+  <div class="alert alert-danger" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
+  <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)="onSubmit()" novalidate >
+
+    <!-- {{userForm.value | json}} -->
+  <hr/>
+    <!-- <div  ngModelGroup="address">
+       <div class="form-group">
+        <label for="phone">Street</label>
+        <input type="tel" class="form-control" name="street" id="phone" placeholder="Street" ngModel >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">City</label>
+          <input type="tel" class="form-control" name="city" id="phone" placeholder="City" ngModel >
+        </div>
+
+          <div class="form-group">
+            <label for="phone">State</label>
+            <input type="tel" class="form-control" name="state" id="phone" placeholder="State" ngModel >
+          </div>
+
+            <div class="form-group">
+              <label for="phone">Postal Code</label>
+              <input type="tel" class="form-control" name="postalcode" id="phone" placeholder="Postal Code" ngModel >
+            </div>
+      </div> -->
+      <!-- {{userModel | json}} -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" required #name="ngModel" class="form-control" [class.is-invalid]="name.invalid && name.touched" name="username" id="name" placeholder="Enter your name" [(ngModel)]="userModel.name">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Enter Mail" [(ngModel)]="userModel.email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" required #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched" class="form-control" name="phone" id="phone" placeholder="Enter Phone number" [(ngModel)]="userModel.phone">
+      <!-- <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone no must be 10 digits</small> -->
+      <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+        <small class="text-danger" *ngIf="phone.errors.required">Phone number is required</small>
+        <small class="text-danger" *ngIf="phone.errors.pattern">Phone number must be 10 digits</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <select (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" 
+       #topic="ngModel"
+       [class.is-invalid]="topicHasError && topic.touched"
+       class="custom-select" name="topic" [(ngModel)]="userModel.topic">
+        <option value="default"> I am Interested in</option>
+ 
+        <option *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+      <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">Please Choose a topic</small>
+    </div>
+
+    <div class="mb-3">
+      <label >Time Preference</label>
+      <div class="form-check">
+        <input type="radio" [(ngModel)]="userModel.timePreference" name="timePreference" class="form-check-input" value="morning">
+        <label class="form-check-label">Morning (9AM - 12PM)</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" [(ngModel)]="userModel.timePreference" name="timePreference" class="form-check-input" value="evening">
+        <label class="form-check-label">Evening (5PM - 8PM)</label>
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" name="promotion" id="check" [(ngModel)]="userModel.subscribe" class="form-check-input">
+      <label class="form-check-label" for="check"> Send me promotional Offers </label>
+    </div>
+
+    <button [disabled]="userForm.form.invalid || topicHasError" (click)="tug(userForm)" class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+</div>
+

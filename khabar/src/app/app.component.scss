@@ -5,10 +5,16 @@
 }
 .example-spacer {
     flex: 1 1 auto;
+   
   }
-  
+  .example-container{
+    
+    background-image:linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
   .example-card{
       margin-top: 4px;
+    
   }
   
   .example-header-image { 
@@ -19,9 +25,13 @@
       font-weight: bold;
   }
   
-  .img-article{
-    //   height: 350px;
-  }
+  .mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 600px;
+}
   
   .action-buttons{
       text-align: center;
@@ -58,13 +68,84 @@
       color: white;
   }
   
-
+.img-article{
+    width: 100% !important;
+    margin: 0px !important;
+}
   // mat tool bar styles
 
 
-//   ::ng-deep .mat-toolbar{
-//     z-index: 999;
-//     position: fixed
-//   }
+  ::ng-deep .mat-toolbar{
+    z-index: 999;
+    position: fixed
+  }
+
   
-  
+#img-hold{
+    display: inline-block;
+}
+#img-hold img{
+    width: 65px;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    left: 14px;
+}
+// .example-full-width{
+//     width: 70%;
+// }
+
+textarea.mat-input-element {
+    resize: none;
+    overflow: auto;
+}
+.myarrow{
+    vertical-align: middle;
+}
+.dlink{
+    list-style: none;
+}
+.dul{
+    padding-left: 0px;
+}
+@media (min-width: 768px){
+    .example-card {
+        margin-top: 10px;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+mat-sidenav.example-sidenav.mat-drawer.mat-sidenav.ng-tns-c6-1.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted {
+    margin-top: 40px;
+}
+.myinput{
+    font-size: 12px;
+    margin-top: 30px;
+    margin-right: 12px;
+}
+
+mat-sidenav.example-sidenav.mat-drawer.mat-sidenav.ng-tns-c6-1.ng-trigger.ng-trigger-transform.mat-drawer-over.ng-star-inserted {
+    transform: none;
+    visibility: visible;
+    position: fixed;
+    overflow: auto;
+    bottom: 0px;
+    height: auto;
+}
+.mat-drawer-inner-container::-webkit-scrollbar{
+    width:1em;
+    color: #1fc8db;
+    background: #125979;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   
+}
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    
+  }

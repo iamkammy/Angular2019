@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
 import { DepartmentContactComponent } from './department-contact/department-contact.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/departments', pathMatch:'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
    ]
 },
 {path: 'employees', component: EmployeeListComponent },
+{path: 'templateform', component: TemplateFormComponent},
 {path: "**", component: PageNotFoundComponent}
 
 ];
@@ -34,5 +36,6 @@ export const routingComponents = [DepartmentListComponent,
                                      PageNotFoundComponent,
                                      DepartmentDetailComponent,
                                      DepartmentOverviewComponent,
-                                     DepartmentContactComponent
+                                     DepartmentContactComponent,
+                                     TemplateFormComponent,
                                               ]

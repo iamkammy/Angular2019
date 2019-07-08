@@ -1,0 +1,32 @@
+<button color="warn" mat-raised-button>Click me!</button>
+
+
+<div>
+  <mat-button-toggle #toggleBtn  disableRipple>Toggle</mat-button-toggle>
+  {{toggleBtn.checked}}
+</div>
+
+
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">Angular </mat-button-toggle>
+    <mat-button-toggle value="reactjs">react </mat-button-toggle>
+    <mat-button-toggle value="vuejs">vue </mat-button-toggle>
+  </mat-button-toggle-group>
+  {{toggleGroup.value}}
+</div>
+
+<div>
+  <mat-icon>grade</mat-icon>
+
+  <span matBadge="45" matBadgeOverlap="false" matBadgeColor="warn"> Notifications</span>
+</div>
+<br>  <br>
+<div>
+  <span matBadge="45"  matBadgePosition="below before">Notifications</span>
+</div>
+
+<div>
+  <span matBadge="45"  matBadgePosition="below after">Notifications</span>
+</div>
+<router-outlet></router-outlet>
